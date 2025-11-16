@@ -8,7 +8,8 @@ module instructionMemory (
   reg [31:0] instMem [0:1023];
 
   initial begin
-    $readmemb("./Instructions/instructions.mem", instMem);
+    $display("Loading instruction memory...");
+    $readmemb("C:\\Final_Year_Project\\Pipelined_Risc_V_Core\\src\\design\\Instructions\\instructions.mem", instMem);
   end
 
   always @(posedge clock) begin

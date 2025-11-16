@@ -23,7 +23,7 @@ module processor_tb;
     initial begin
         reset = 1'b1;
         #10 reset = 1'b0;
-        #2000 $finish;
+        #200 $finish;
     end
 
     // Dumpfile for GTKWave
