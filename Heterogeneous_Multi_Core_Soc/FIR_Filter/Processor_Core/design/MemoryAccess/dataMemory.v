@@ -18,6 +18,7 @@ module dataMemory(
     // READ LOGIC
     always @(*) begin
         if (memoryReadEnable) begin
+            $display($time," [MEM] ReadAddress : %0d",memoryAddress);
             rawRead = dataMem[memoryAddress[11:2]];
             case (func3)
                 3'b000: readData = {{24{rawRead[7]}}, rawRead[7:0]};     // LB
