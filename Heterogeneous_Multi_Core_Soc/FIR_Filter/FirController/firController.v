@@ -1,8 +1,8 @@
 module fir_controller #(
-    parameter INPUT_BASE  = 32'h0000_0000,
-    parameter COEFF_BASE  = 32'h0000_0040,
-    parameter OUTPUT_BASE = 32'h0000_0080,
-    parameter NUM_SAMPLES = 16
+    parameter INPUT_BASE  = 32'd0,
+    parameter COEFF_BASE  = 32'd64,
+    parameter OUTPUT_BASE = 32'd128,  
+    parameter NUM_SAMPLES = 5       
 )(
     input  wire        clock,
     input  wire        reset,

@@ -45,10 +45,6 @@ module alu(
             ITypeJALR_ALU:   branch = 1'b1;
         endcase
 
-        $display($time," [ALU] RS1 : %0d",in1);
-        $display($time," [ALU] RS2 : %0d",in2);
-        $display($time," [ALU] AluOutput : %0d",aluOutput);
-
     end
 
 endmodule

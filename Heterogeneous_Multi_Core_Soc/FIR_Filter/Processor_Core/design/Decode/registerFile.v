@@ -8,7 +8,7 @@ module registerFile(
     input  wire        registerWrite,
     input  wire        fir_we,
     input  wire [4:0]  fir_waddr,
-    input  wire [31:0] fir_wdata
+    input  wire [31:0] fir_wdata,
     output wire [31:0] readData1,
     output wire [31:0] readData2,
     output wire [31:0] accumData
@@ -26,7 +26,7 @@ module registerFile(
             end
         end else if (fir_we && fir_waddr != 5'd0) begin
             regFile[fir_waddr] <= fir_wdata;
-            $display("[FIR] RF WRITE x%0d = %0d", fir_waddr, fir_wdata);
+            $display($time, "[FIR] RF WRITE x%0d = %0d", fir_waddr, fir_wdata);
         end else if (registerWrite && (rd != 5'd0)) begin
             regFile[rd] <= writeData;
             $display($time, " [REG] WRITE[%0d] : %0d", rd, writeData);

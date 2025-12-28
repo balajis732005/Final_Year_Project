@@ -18,7 +18,7 @@ module tb_soc;
         #20;
         reset = 0;
 
-        #2000;
+        #4000;
         $finish;
     end
 

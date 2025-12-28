@@ -37,13 +37,11 @@ module soc_top (
     processor cpu (
         .clock(clock),
         .reset(reset),
-
         .fir_start(fir_start),
-        .fir_done (fir_done),
-
-        .fir_rf_we    (fir_rf_we),
-        .fir_rf_waddr (fir_rf_waddr),
-        .fir_rf_wdata (fir_rf_wdata)
+        .fir_rf_we(fir_rf_we),
+        .fir_rf_waddr(fir_rf_waddr),
+        .fir_rf_wdata(fir_rf_wdata),
+        .fir_done (fir_done)
     );
 
 endmodule
