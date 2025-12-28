@@ -41,7 +41,7 @@ module alu(
         endcase
 
         case (aluControl)
-            JTypeALU:        branch = 1'b1;
+            JTypeALU:        branch = 1'b1; //Alu hase been changed
             ITypeJALR_ALU:   branch = 1'b1;
         endcase
 
