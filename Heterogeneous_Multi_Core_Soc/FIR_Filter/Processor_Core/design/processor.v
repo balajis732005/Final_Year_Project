@@ -1,6 +1,11 @@
 module processor(
     input  clock,
-    input  reset
+    input  reset,
+    input  wire        fir_start,
+    output wire        fir_done,
+    input  wire        fir_rf_we,
+    input  wire [4:0]  fir_rf_waddr,
+    input  wire [31:0] fir_rf_wdata
 );
 
   // FETCH
@@ -166,7 +171,10 @@ module processor(
       .registerWrite(registerWriteEnableMemoryToWriteBack),
       .readData1(readData1),
       .readData2(readData2),
-      .accumData(accumData)
+      .accumData(accumData),
+      .fir_we(fir_rf_we),
+      .fir_waddr(fir_rf_waddr),
+      .fir_wdata(fir_rf_wdata)
   );
 
   immediateGenerator immediateGeneratorDut(
@@ -359,5 +367,7 @@ module processor(
       .writeBackFromMemoryOrAlu(writeBackFromMemoryOrAluOutMemoryToWriteBack),
       .dataBack(registerWriteData)
   );
+
+  assign fir_done = (pcOut == 32'h00000080);
 
 endmodule
