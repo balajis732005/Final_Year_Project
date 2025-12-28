@@ -1,11 +1,11 @@
 module processor(
     input  clock,
     input  reset,
-    input  wire        fir_start,
-    output wire        fir_done,
-    input  wire        fir_rf_we,
-    input  wire [4:0]  fir_rf_waddr,
-    input  wire [31:0] fir_rf_wdata
+    input  fir_start,
+    input  fir_rf_we,
+    input  [4:0] fir_rf_waddr,
+    input  [31:0] fir_rf_wdata,
+    output wire fir_done
 );
 
   // FETCH
@@ -368,6 +368,7 @@ module processor(
       .dataBack(registerWriteData)
   );
 
-  assign fir_done = (pcOut == 32'h00000080);
+  // FIR DONE FLAG
+  assign fir_done = (pcOutput == 32'h00000080);
 
 endmodule

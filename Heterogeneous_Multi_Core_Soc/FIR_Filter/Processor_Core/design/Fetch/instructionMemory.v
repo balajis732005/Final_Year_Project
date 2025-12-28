@@ -5,7 +5,7 @@ module instructionMemory (
   output reg  [31:0] instruction
 );
 
-  reg [31:0] instMem [0:1023];
+  reg [31:0] instMem [0:31];
 
   initial begin
     $display("Loading instruction memory...");
