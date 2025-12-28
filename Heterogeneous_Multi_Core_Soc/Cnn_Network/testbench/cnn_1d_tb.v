@@ -19,7 +19,6 @@ module tb_cnn_ecg;
         ecg_in[28]=-16'd5; ecg_in[29]=16'd0;  ecg_in[30]=16'd5;  ecg_in[31]=16'd10;
 
         #10;
-
         $display("ECG Segment Analysis:");
         $display("Normal: %s",   class_out[0] ? "YES":"NO");
         $display("PVC: %s",      class_out[1] ? "YES":"NO");
